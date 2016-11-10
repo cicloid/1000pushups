@@ -1,2 +1,5 @@
 .env
 tmp/
+.bundle
+bin/bench
+bin/assert.sh
