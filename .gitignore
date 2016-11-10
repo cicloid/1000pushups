@@ -1,5 +1,6 @@
 .env
 tmp/
 .bundle
+vendor/*
 bin/bench
 bin/assert.sh
