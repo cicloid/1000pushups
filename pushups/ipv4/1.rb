@@ -29,7 +29,6 @@ end
 
 if $stdin.tty?
   ARGV.each do |ipaddr|
-    ipaddr.strip!
     puts "#{ipaddr} is #{is_address_valid?(ipaddr)}"
   end
 else
