@@ -4,6 +4,7 @@ ADDRESSES = 0b1111_1111_1111_1111_1111_1111_1111_1111
 
 # For simplicity's sake ignoring integer IP's as that would branch everything
 def validate_address(ipaddr)
+  return validate_int_address(ipaddr) if /^(\d+)$/.match(ipaddr)
   if matches = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/.match(ipaddr)
     result = true
     captures = matches.captures
@@ -14,6 +15,10 @@ def validate_address(ipaddr)
   else
     false
   end
+end
+
+def validate_int_address(ipaddr)
+  ipaddr.to_i < ADDRESSES
 end
 
 def is_address_valid?(ipaddr)
